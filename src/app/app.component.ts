@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
   title = 'weatherapp';
 
 
-  currentWeather: WeatherModel = {} as WeatherModel || {};
-  forecastWeather: ForecastModel = {} as ForecastModel || {};
+  currentWeather: WeatherModel = {} as WeatherModel;
+  forecastWeather: ForecastModel = {} as ForecastModel;
   position: GeolocationCoordinates = {} as GeolocationCoordinates;
 
   constructor(private api: WeatherApiService) { }
@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
     this.api.getWeather(this.position).subscribe((res) => {
       this.currentWeather = res;
     })
+    this.api.getForecast(this.position).subscribe((res) => {
+      this.forecastWeather = res;
+    } )
   }
 
   getLocation() {
@@ -33,8 +36,6 @@ export class AppComponent implements OnInit {
           if (position) {
             this.position = position.coords;
             resolve({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
             })
           }
         },
@@ -45,11 +46,11 @@ export class AppComponent implements OnInit {
     });
   }
 
-  changeLoc() {
-    this.api.getWeather(undefined, "izmir").subscribe((res) => {
+  changeLoc(val:string) {
+    this.api.getWeather(undefined, val).subscribe((res) => {
       this.currentWeather = res;
     })
-    this.api.getForecast(undefined, "izmir").subscribe((res) => {
+    this.api.getForecast(undefined, val).subscribe((res) => {
       this.forecastWeather = res;
     })
 

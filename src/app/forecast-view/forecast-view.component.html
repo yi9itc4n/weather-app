@@ -1,0 +1,15 @@
+
+
+<p-scrollPanel styleClass="sm:mx-1 md:mx-6 lg:mx-8 mt-5" [style]="{ height: '120px'}">
+  <div class="flex h-full">
+  <p-card class="flex pr-1" *ngFor="let item of forecast.list">
+    {{item.main.temp|number:"1.0-0"}}°
+  </p-card>
+  </div>
+</p-scrollPanel>
+
+  <p-card class="flex pr-1" *ngFor="let item of forecastList">
+    {{item.main.temp|number:"1.0-0"}}°
+  </p-card>
+
+

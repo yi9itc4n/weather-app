@@ -1,7 +1,13 @@
 @import "primeng/resources/themes/lara-dark-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
+@import 'primeicons/primeicons.css';
 
 body {
     font-family: var(--font-family);
+  background-image: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* <- here it is */
 }
+

@@ -1,3 +1,5 @@
-<div>{{this.currentWeather.name}}</div>
-<button (click)="changeLoc()"></button>
+<div class="gradient-container">
+<app-top-bar [curWeather]="currentWeather" (queryEvent)="changeLoc($event)"></app-top-bar>
 <app-current-weather [curWeather]="currentWeather" ></app-current-weather>
+  <app-forecast-view [forecast]="forecastWeather"></app-forecast-view>
+</div>

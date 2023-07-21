@@ -27,7 +27,7 @@ export class WeatherApiService {
     let tempPrm =  this.defPrm;
     if(pos) {
       tempPrm = tempPrm.set("lat",pos.latitude);
-      tempPrm = tempPrm.set("lon",pos.longitude); 
+      tempPrm = tempPrm.set("lon",pos.longitude);
     }
     if(q) {
       tempPrm = tempPrm.delete("lat");
@@ -43,11 +43,16 @@ export class WeatherApiService {
     let tempPrm = this.defPrm;
     if(pos) {
       tempPrm = tempPrm.set("lat",pos.latitude);
-      tempPrm = tempPrm.set("lon",pos.longitude); 
+      tempPrm = tempPrm.set("lon",pos.longitude);
     }
-    return this.http.get(this.fApiUrl, { params: this.defPrm });
+    if(q) {
+      tempPrm = tempPrm.delete("lat");
+      tempPrm = tempPrm.delete("lon");
+      tempPrm = tempPrm.append("q", q);
+    }
+    return this.http.get(this.fApiUrl, { params: tempPrm });
  }
-  
-  
+
+
 
 }
