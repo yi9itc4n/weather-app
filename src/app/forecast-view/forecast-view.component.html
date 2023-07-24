@@ -1,15 +1,15 @@
 
 
-<p-scrollPanel styleClass="sm:mx-1 md:mx-6 lg:mx-8 mt-5" [style]="{ height: '120px'}">
+<p-scrollPanel  styleClass="bg-white-alpha-20 border-round sm:mx-1 md:mx-2 lg:mx-3 mt-5" [style]="{ height: '140px'}">
   <div class="flex h-full">
-  <p-card class="flex pr-1" *ngFor="let item of forecast.list">
-    {{item.main.temp|number:"1.0-0"}}°
-  </p-card>
+    <p-card id="hourly-forecast" class="flex pr-1 flex-column justify-content-center align-items-center" *ngFor="let item of forecast.list">
+      <div class="flex text-center align-items-center justify-content-center h-3rem">{{formatDate(item.dt*1000,"HH","en")}}<br>{{formatDate(item.dt*1000,"E","en")}}</div>
+      <div class="flex align-items-center justify-content-center h-3rem"><img src="assets/{{item.weather[0].icon}}.png" class="h-2rem"></div>
+      <div class="flex align-items-center justify-content-center h-3rem">{{item.main.temp|number:"1.0-0"}}°</div>
+    </p-card>
   </div>
 </p-scrollPanel>
 
-  <p-card class="flex pr-1" *ngFor="let item of forecastList">
-    {{item.main.temp|number:"1.0-0"}}°
-  </p-card>
+
 
 

@@ -1,0 +1,16 @@
+<div class="flex flex-row">
+  <div class="flex-1 text-3xl font-light p-3 ">{{curWeather.name}}, {{curWeather.sys.country}}</div>
+  <div class="flex flex-1 pt-3 justify-content-end lg:pr-8 md:pr-7 sm:pr-2">
+    <p-inplace>
+      <ng-template pTemplate="display">
+        <p-button icon="pi pi-search" styleClass="p-button-outlined"></p-button>
+      </ng-template>
+      <ng-template pTemplate="content">
+    <div class="white-space-nowrap">
+    <input #queryinput type="text" class="bg-white-alpha-30 text-black-alpha-30" placeholder="Search" style="max-width: 30vw"  pInputText/>
+    <p-button icon="pi pi-search" styleClass="p-button-outlined" (click)="search(queryinput.value)"></p-button>
+    </div>
+      </ng-template>
+    </p-inplace>
+  </div>
+</div>

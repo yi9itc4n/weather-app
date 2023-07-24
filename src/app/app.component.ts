@@ -35,11 +35,13 @@ export class AppComponent implements OnInit {
         navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
           if (position) {
             this.position = position.coords;
-            resolve({
-            })
+            resolve(
+              true
+            )
           }
         },
-          (error: GeolocationPositionError) => reject(error));
+          (error: GeolocationPositionError) => {reject(error)
+        console.log(error)});
       } else {
         alert("Geolocation is not supported by this browser.");
       }

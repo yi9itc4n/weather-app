@@ -20,12 +20,12 @@ export class CurrentWeatherComponent implements OnChanges{
 
   ngOnChanges(changes: SimpleChanges) {
     this.weatherDetails=[];
-    this.weatherDetails.push(formatNumber(this.curWeather.main.temp_max,"en","1.0-0")+"°"+`<br>`+"High");
-    this.weatherDetails.push(formatNumber(this.curWeather.wind.speed,"en","1.0-0")+" km/h"+`<br>`+"Wind");
-    this.weatherDetails.push(this.eptoTime(this.curWeather.sys.sunrise)+`<br>`+"Sunrise");
-    this.weatherDetails.push(formatNumber(this.curWeather.main.temp_min,"en","1.0-0")+"°"+`<br>`+"Low");
-    this.weatherDetails.push((this.curWeather.rain ? String(this.curWeather.rain["1h"]):'0')+"%"+`<br>`+"Rain");
-    this.weatherDetails.push(this.eptoTime(this.curWeather.sys.sunset)+`<br>`+"Sunset");
+    this.weatherDetails.push(formatNumber(this.curWeather.main.temp_max,"en","1.0-0")+"°"+`<br>`+"Yüksek");
+    this.weatherDetails.push(formatNumber(this.curWeather.wind.speed,"en","1.0-0")+" km/h"+`<br>`+"Rüzgar");
+    this.weatherDetails.push(this.eptoTime(this.curWeather.sys.sunrise)+`<br>`+"Gündoğumu");
+    this.weatherDetails.push(formatNumber(this.curWeather.main.temp_min,"en","1.0-0")+"°"+`<br>`+"Düşük");
+    this.weatherDetails.push((this.curWeather.rain ? String(this.curWeather.rain["1h"]):'0')+"%"+`<br>`+"Yağmur");
+    this.weatherDetails.push(this.eptoTime(this.curWeather.sys.sunset)+`<br>`+"Günbatımı");
 
   }
 

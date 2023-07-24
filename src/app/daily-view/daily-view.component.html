@@ -1,0 +1,14 @@
+
+  <div class="flex flex-column mt-3">
+    <p-card class="flex-row flex-wrap align-items-center justify-content-center border-round mx-3 my-1" *ngFor="let item of forecastList">
+      <div class="grid align-items-center align-content-center justify-content-center">
+      <div class="col text-2xl font-bold">{{formatDate(item.dt*1000,"d/MM","en")}}</div>
+        <div class="col text-2xl font-bold">{{item.weather.at(0)?.description | titlecase}}</div>
+        <div class="col text-2xl font-bold"><div class="col text-2xl font-bold"> {{item.main.temp|number:"1.0-0"}}°</div></div>
+        <div class="align-items-end"><img src="assets/{{item.weather[0].icon}}.png" class="h-4rem"></div>
+        </div>
+    </p-card>
+  </div>
+
+
+

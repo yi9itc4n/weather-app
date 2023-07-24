@@ -22,5 +22,7 @@ ngOnChanges(changes: SimpleChanges) {
 
 }
 
+
   protected readonly scrollX = scrollX;
+  protected readonly formatDate = formatDate;
 }

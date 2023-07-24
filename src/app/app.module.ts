@@ -13,24 +13,30 @@ import {FormsModule} from "@angular/forms";
 import {CardModule} from "primeng/card";
 import {ScrollerModule} from "primeng/scroller";
 import {ScrollPanelModule} from "primeng/scrollpanel";
+import {InplaceModule} from "primeng/inplace";
+import {PanelModule} from "primeng/panel";
+import { DailyViewComponent } from './daily-view/daily-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrentWeatherComponent,
     TopBarComponent,
-    ForecastViewComponent
+    ForecastViewComponent,
+    DailyViewComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    ButtonModule,
-    InputTextModule,
-    FormsModule,
-    CardModule,
-    ScrollerModule,
-    ScrollPanelModule,
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        ButtonModule,
+        InputTextModule,
+        FormsModule,
+        CardModule,
+        ScrollerModule,
+        ScrollPanelModule,
+        InplaceModule,
+        PanelModule,
+    ],
   providers: [WeatherApiService],
   bootstrap: [AppComponent]
 })
