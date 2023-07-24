@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {APP_BASE_HREF} from "@angular/common";
 
 import { AppComponent } from './app.component';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
@@ -37,7 +38,7 @@ import { DailyViewComponent } from './daily-view/daily-view.component';
         InplaceModule,
         PanelModule,
     ],
-  providers: [WeatherApiService],
+  providers: [WeatherApiService, {provide: APP_BASE_HREF, useValue: '/weather-app'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
